@@ -1,0 +1,28 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/0.基类库源码(Nuget)/">
+    <Project Path="BearPlan.Common/BearPlan.Common.csproj" />
+    <Project Path="BearPlan.Core/BearPlan.Core.csproj" />
+    <Project Path="BearPlan.Infrastructure/BearPlan.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/1.Api/">
+    <Project Path="BearPlan.Api/BearPlan.Api.csproj" />
+    <Project Path="BearPlan.TaskService/BearPlan.TaskService.csproj" />
+  </Folder>
+  <Folder Name="/2.Business/">
+    <Project Path="BearPlan.Business/BearPlan.Business.csproj" />
+    <Project Path="BearPlan.EventBus/BearPlan.EventBus.csproj" />
+    <Project Path="BearPlan.IBusiness/BearPlan.IBusiness.csproj" />
+  </Folder>
+  <Folder Name="/3.Repository/">
+    <Project Path="BearPlan.Repository/BearPlan.Repository.csproj" />
+  </Folder>
+  <Folder Name="/4.Entity/">
+    <Project Path="BearPlan.Entity/BearPlan.Entity.csproj" />
+    <Project Path="BearPlan.Models/BearPlan.Models.csproj" />
+  </Folder>
+</Solution>

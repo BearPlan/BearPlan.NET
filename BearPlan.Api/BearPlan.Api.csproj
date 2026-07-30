@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RuntimeIdentifiers>linux-x64;win-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>BearPlan.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="baerplan.db" />
+    <None Remove="baerplan.log.db" />
+    <None Remove="index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BearPlan.Common\BearPlan.Common.csproj" />
+    <ProjectReference Include="..\BearPlan.Infrastructure\BearPlan.Infrastructure.csproj" />
+    <ProjectReference Include="..\BearPlan.TaskService\BearPlan.TaskService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\exportFile\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Data\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <!-- wwwroot/plugins 是开发本地的插件市场源码目录（含 node_modules），
+       不参与编译，也不应进入发布包。统一在这里排除，避免 Visual Studio
+       再次把这些文件自动写回 csproj。 -->
+  <ItemGroup>
+    <Compile Remove="wwwroot\plugins\**" />
+    <Content Remove="wwwroot\plugins\**" />
+    <EmbeddedResource Remove="wwwroot\plugins\**" />
+    <None Remove="wwwroot\plugins\**" />
+    <TypeScriptCompile Remove="wwwroot\plugins\**" />
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/band-manifest" />
+    </VisualStudio>
+  </ProjectExtensions>
+
+</Project>

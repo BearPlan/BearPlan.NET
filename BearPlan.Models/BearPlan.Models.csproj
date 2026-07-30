@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+   
+  </PropertyGroup>
+  
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>BearPlan.Models.xml</DocumentationFile>
+  </PropertyGroup>
+  
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="10.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BearPlan.Entity\BearPlan.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

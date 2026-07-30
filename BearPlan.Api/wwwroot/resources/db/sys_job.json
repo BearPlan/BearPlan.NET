@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Name": "全栈开发",
+    "Sort": 1,
+    "Code": "KF",
+    "Enabled": true,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 2,
+    "Name": "软件测试",
+    "Sort": 2,
+    "Enabled": true,
+    "Code": "CS",
+    "CreateBy": "admin"
+  }
+]

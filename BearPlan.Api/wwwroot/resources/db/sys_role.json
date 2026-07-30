@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Name": "内置管理员",
+    "Level": 1,
+    "Description": "内置管理员",
+    "DataScopeType": 1,
+    "AuthCode": "admin",
+    "CreateBy": "admin"
+  },
+
+  {
+    "Id": 2,
+    "Name": "普通用户",
+    "Level": 90,
+    "Description": "普通用户",
+    "DataScopeType": 1,
+    "AuthCode": "user",
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 3,
+    "Name": "游客",
+    "Level": 99,
+    "Description": "游客",
+    "DataScopeType": 1,
+    "AuthCode": "guest",
+    "CreateBy": "admin"
+  }
+]

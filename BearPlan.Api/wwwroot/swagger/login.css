@@ -1,0 +1,305 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7c84ff;
+    --primary-hover: #8b92ff;
+    --primary-active: #646cff;
+    --primary-light: #bcc0ff;
+    --primary-pale: #2a2d3f;
+    --bg: #0e0f1a;
+    --page-bg: #0e0f1a;
+    --card-bg: #181a26;
+    --input-bg: #20232f;
+    --text: #e6e8f0;
+    --text-secondary: #8a8f9c;
+    --text-placeholder: #5a5f6c;
+    --border: #2c3040;
+    --border-hover: #3a3e4d;
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --dot-dim: rgba(124, 132, 255, 0.20);
+    --dot-bright: #8a91ff;
+    --spot-glow: rgba(124, 132, 255, 0.22);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+        'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============ Page ============ */
+.login-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--bg);
+    /* 鼠标聚光灯坐标，由 JS 随鼠标更新 */
+    --mx: 50%;
+    --my: 50%;
+}
+
+/* ============ Dot matrix background (点阵 + 鼠标聚光灯) ============ */
+/* 底层：满屏淡灰小圆点，始终可见 */
+.dot-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-color: var(--page-bg);
+    background-image: radial-gradient(circle, var(--dot-dim) 1.6px, transparent 1.9px);
+    background-size: 22px 22px;
+    background-position: 11px 11px;
+    transition: background-color 0.4s ease;
+}
+
+/* 上层：同位置的主色亮点阵，被 radial-gradient mask 挡住，只在鼠标周围一圈显示 */
+.dot-bright {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, var(--dot-bright) 1.7px, transparent 2px),
+        radial-gradient(circle 170px at var(--mx) var(--my), var(--spot-glow), transparent 70%);
+    background-size: 22px 22px, 100% 100%;
+    background-position: 11px 11px, 0 0;
+    -webkit-mask-image: radial-gradient(circle 180px at var(--mx) var(--my), #000 0%, rgba(0, 0, 0, 0.55) 50%, transparent 75%);
+    mask-image: radial-gradient(circle 180px at var(--mx) var(--my), #000 0%, rgba(0, 0, 0, 0.55) 50%, transparent 75%);
+}
+
+/* 尊重「减少动态效果」：隐藏聚光灯，只留静态点阵 */
+@media (prefers-reduced-motion: reduce) {
+    .dot-bright {
+        display: none;
+    }
+}
+
+/* ============ Card ============ */
+.login-card {
+    position: relative;
+    z-index: 4;
+    width: 400px;
+    max-width: calc(100% - 32px);
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    padding: 40px;
+}
+
+@media (max-width: 640px) {
+    .login-card {
+        width: 300px;
+        padding: 28px 24px;
+    }
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.login-header .logo {
+    width: 56px;
+    height: 56px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.login-header .logo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.login-header .title {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+    .login-header .logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .login-header .title {
+        font-size: 20px;
+    }
+}
+
+.login-body {
+    margin-top: 28px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0 0 24px;
+}
+
+/* ============ Inputs ============ */
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-wrap .input-icon {
+    position: absolute;
+    left: 12px;
+    display: inline-flex;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.input-wrap .input-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.input-wrap input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 40px;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.input-wrap input::placeholder {
+    color: var(--text-placeholder);
+}
+
+.input-wrap input:hover {
+    border-color: var(--border-hover);
+}
+
+.input-wrap input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.15);
+}
+
+/* password show/hide toggle */
+.pwd-wrap input {
+    padding-right: 40px;
+}
+
+.pwd-toggle {
+    position: absolute;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.pwd-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pwd-toggle:hover {
+    color: var(--primary);
+}
+
+.pwd-wrap .eye-closed {
+    display: none;
+}
+
+.pwd-wrap.show-pwd .eye-open {
+    display: none;
+}
+
+.pwd-wrap.show-pwd .eye-closed {
+    display: inline-flex;
+}
+
+/* ============ Button ============ */
+.login-btn {
+    width: 100%;
+    height: 44px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 22px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(100, 108, 255, 0.35);
+}
+
+.login-btn:active {
+    background: var(--primary-active);
+    transform: translateY(1px);
+}
+
+/* ============ Overlay / Loader ============ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

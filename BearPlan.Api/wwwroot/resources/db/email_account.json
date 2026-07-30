@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Email": "your email",
+    "DisplayName": "your dispalyName",
+    "Host": "smtp.qq.com",
+    "Port": 465,
+    "Account": "your name",
+    "Password": "your pass",
+    "EnableSsl": true,
+    "UseDefaultCredentials": 0,
+    "CreateBy": "admin"
+  }
+]

@@ -1,0 +1,27 @@
+namespace BearPlan.Models.ServerInfo;
+
+/// <summary>
+/// 
+/// </summary>
+public class Swap
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public string Total { get; set; } = string.Empty;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public string Used { get; set; } = string.Empty;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public string Available { get; set; } = string.Empty;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public string UsageRate { get; set; } = string.Empty;
+}

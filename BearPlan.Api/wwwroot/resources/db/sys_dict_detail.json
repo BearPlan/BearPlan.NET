@@ -1,0 +1,220 @@
+[
+  {
+    "Id": 1,
+    "DictId": 1,
+    "Label": "系统类",
+    "Value": "1",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 2,
+    "DictId": 1,
+    "Label": "业务类",
+    "Value": "2",
+    "DictSort": 1,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 3,
+    "DictId": 2,
+    "Label": "停用",
+    "Value": "false",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 4,
+    "DictId": 2,
+    "Label": "启用",
+    "Value": "true",
+    "DictSort": 1,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 5,
+    "DictId": 3,
+    "Label": "停用",
+    "Value": "false",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 6,
+    "DictId": 3,
+    "Label": "启用",
+    "Value": "true",
+    "DictSort": 1,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 7,
+    "DictId": 4,
+    "Label": "禁用",
+    "Value": "false",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 8,
+    "DictId": 4,
+    "Label": "激活",
+    "Value": "true",
+    "DictSort": 1,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 9,
+    "DictId": 5,
+    "Label": "启用",
+    "Value": "true",
+    "DictSort": 1,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 10,
+    "DictId": 5,
+    "Label": "禁用",
+    "Value": "false",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 11,
+    "DictId": 6,
+    "Label": "启用",
+    "Value": "true",
+    "DictSort": 1,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 12,
+    "DictId": 6,
+    "Label": "禁用",
+    "Value": "false",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 13,
+    "DictId": 7,
+    "Label": "cron",
+    "Value": "1",
+    "DictSort": 1,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 14,
+    "DictId": 7,
+    "Label": "simple",
+    "Value": "0",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 15,
+    "DictId": 8,
+    "Label": "ID隔离",
+    "Value": "1",
+    "DictSort": 1,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 16,
+    "DictId": 8,
+    "Label": "库隔离",
+    "Value": "2",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 17,
+    "DictId": 9,
+    "Label": "MySql",
+    "Value": "0",
+    "DictSort": 1,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 18,
+    "DictId": 9,
+    "Label": "SqlServer",
+    "Value": "1",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 19,
+    "DictId": 9,
+    "Label": "Sqlite",
+    "Value": "2",
+    "DictSort": 3,
+    "CreateBy": "admin",
+    "UpdateBy": "",
+    "UpdateTime": null,
+    "IsDeleted": false
+  },
+  {
+    "Id": 20,
+    "DictId": 9,
+    "Label": "Oracle",
+    "Value": "3",
+    "DictSort": 4,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 21,
+    "DictId": 10,
+    "Label": "全部",
+    "Value": "1",
+    "DictSort": 1,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 22,
+    "DictId": 10,
+    "Label": "本人",
+    "Value": "2",
+    "DictSort": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 23,
+    "DictId": 10,
+    "Label": "本部门",
+    "Value": "3",
+    "DictSort": 3,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 24,
+    "DictId": 10,
+    "Label": "本部门及以下",
+    "Value": "4",
+    "DictSort": 4,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 25,
+    "DictId": 10,
+    "Label": "自定义",
+    "Value": "5",
+    "DictSort": 5,
+    "CreateBy": "admin"
+  }
+]

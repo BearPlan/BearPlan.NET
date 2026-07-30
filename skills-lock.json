@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "worma-guidelines": {
+      "source": "alovajs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/worma-guidelines/SKILL.md",
+      "computedHash": "792efa7b80764c43f1c54b30bede5fa915e51ab2999e54370f77a13b14d29e2c"
+    }
+  }
+}

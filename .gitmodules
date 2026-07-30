@@ -1,0 +1,6 @@
+[submodule "BearPlan.Core"]
+	path = BearPlan.Core
+	url = https://gitee.com/BearPlan/BearPlan.NET.Core.git
+[submodule "BearPlan.Admin"]
+	path = BearPlan.Admin
+	url = https://gitee.com/BearPlan/BearPlan.Admin.git

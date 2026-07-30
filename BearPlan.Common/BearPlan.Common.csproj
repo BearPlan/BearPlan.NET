@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>BearPlan.Common.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="itext" Version="9.7.0" />
+    <PackageReference Include="MailKit" Version="4.17.0" />
+    <PackageReference Include="Senparc.Weixin" Version="6.24.0" />
+    <PackageReference Include="Senparc.Weixin.Cache.Redis" Version="2.21.3" />
+    <PackageReference Include="Senparc.Weixin.MP" Version="16.25.0" />
+    <PackageReference Include="Shyjus.BrowserDetector" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BearPlan.Core\BearPlan.Core.csproj" />
+  </ItemGroup>
+
+  <!-- 多语言 resx 强类型生成：构建时自动生成 Language.Designer.cs（public static class）
+       中性 Language.resx 作为强类型源；文化特定 *.zh.resx / *.en.resx 仍按嵌入式资源嵌入。
+       Designer.cs 生成到源码目录并入库，保证 VS IntelliSense 与命令行构建一致；
+       resx 变更后需执行「重新生成」刷新 Designer.cs。 -->
+  <ItemGroup>
+    <EmbeddedResource Update="MultiLanguage\Resources\Language.resx">
+      <StronglyTypedFileName>MultiLanguage\Resources\Language.Designer.cs</StronglyTypedFileName>
+      <StronglyTypedClassName>Language</StronglyTypedClassName>
+      <StronglyTypedNamespace>BearPlan.Common.MultiLanguage.Resources</StronglyTypedNamespace>
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
+    </EmbeddedResource>
+    <!-- 显式声明 Designer.cs 参与编译，避免某些 SDK 版本漏挂 -->
+    <Compile Update="MultiLanguage\Resources\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <!-- 把生成的 internal Language 类及其成员改写为 public，供其他程序集强类型访问。
+       GenerateResource 在 CoreCompile 之前运行，故 BeforeTargets=CoreCompile 能命中已生成的 Designer.cs。 -->
+  <Target Name="MakeLanguageDesignerPublic" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <LanguageDesignerFile>MultiLanguage\Resources\Language.Designer.cs</LanguageDesignerFile>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(LanguageDesignerFile)')" Text="Language.Designer.cs 未生成，检查 resx 配置" />
+    <WriteLinesToFile File="$(LanguageDesignerFile)" Lines="$([System.IO.File]::ReadAllText('$(LanguageDesignerFile)').Replace('internal class Language', 'public class Language').Replace('internal Language(', 'public Language(').Replace('internal static', 'public static'))" Overwrite="true" Encoding="UTF-8" />
+  </Target>
+
+</Project>

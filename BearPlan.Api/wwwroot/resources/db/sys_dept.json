@@ -1,0 +1,119 @@
+[
+  {
+    "Id": 1,
+    "Name": "集团总部",
+    "ParentId": 0,
+    "Sort": 1,
+    "Enabled": true,
+    "SubCount": 4,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 2,
+    "Name": "信息部",
+    "ParentId": 1,
+    "Sort": 2,
+    "Enabled": true,
+    "SubCount": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 3,
+    "Name": "财务部",
+    "ParentId": 1,
+    "Sort": 3,
+    "Enabled": true,
+    "SubCount": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 4,
+    "Name": "销售部",
+    "ParentId": 1,
+    "Sort": 4,
+    "Enabled": true,
+    "SubCount": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 5,
+    "Name": "市场部",
+    "ParentId": 1,
+    "Sort": 5,
+    "Enabled": true,
+    "SubCount": 2,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 6,
+    "Name": "研发部",
+    "ParentId": 2,
+    "Sort": 6,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 7,
+    "Name": "产品部",
+    "ParentId": 2,
+    "Sort": 7,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 8,
+    "Name": "财务会计部",
+    "ParentId": 3,
+    "Sort": 8,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 9,
+    "Name": "审计风控部",
+    "ParentId": 3,
+    "Sort": 9,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 10,
+    "Name": "客服部",
+    "ParentId": 4,
+    "Sort": 10,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 11,
+    "Name": "售后部",
+    "ParentId": 4,
+    "Sort": 11,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 12,
+    "Name": "营销部",
+    "ParentId": 5,
+    "Sort": 12,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  },
+  {
+    "Id": 13,
+    "Name": "策划部",
+    "ParentId": 5,
+    "Sort": 13,
+    "Enabled": true,
+    "SubCount": 0,
+    "CreateBy": "admin"
+  }
+]
