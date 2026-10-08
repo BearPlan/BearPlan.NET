@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 文件记录
     /// </summary>
-    [SugarTable("sys_file_record")]
+    [SugarTable("sys_file_record", IsDisabledDelete = true)]
     public class FileRecord : BaseEntity<long>
     {
         /// <summary>

@@ -18,7 +18,7 @@
     "CycleRunTimes": 0,
     "IsEnable": false,
     "RunParams": null,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 2,
@@ -39,6 +39,6 @@
     "CycleRunTimes": 0,
     "IsEnable": false,
     "RunParams": null,
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

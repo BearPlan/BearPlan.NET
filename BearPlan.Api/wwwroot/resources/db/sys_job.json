@@ -5,7 +5,7 @@
     "Sort": 1,
     "Code": "KF",
     "Enabled": true,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 2,
@@ -13,6 +13,6 @@
     "Sort": 2,
     "Enabled": true,
     "Code": "CS",
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

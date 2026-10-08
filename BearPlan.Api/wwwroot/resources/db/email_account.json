@@ -9,6 +9,6 @@
     "Password": "your pass",
     "EnableSsl": true,
     "UseDefaultCredentials": 0,
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

@@ -9,7 +9,7 @@ namespace BearPlan.Entity.Log
     /// </summary>
     [LogDataBase]
     [SplitTable(SplitType.Month)]
-    [SugarTable($@"{"log_error"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true)]
+    [SugarTable($@"{"log_error"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true, IsDisabledDelete = true)]
     public class ErrorLog : SerilogBase<long>
     {
     }

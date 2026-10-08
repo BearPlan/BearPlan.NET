@@ -5,7 +5,7 @@
     "Label": "系统类",
     "Value": "1",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 2,
@@ -13,7 +13,7 @@
     "Label": "业务类",
     "Value": "2",
     "DictSort": 1,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 3,
@@ -21,7 +21,7 @@
     "Label": "停用",
     "Value": "false",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 4,
@@ -29,7 +29,7 @@
     "Label": "启用",
     "Value": "true",
     "DictSort": 1,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 5,
@@ -37,7 +37,7 @@
     "Label": "停用",
     "Value": "false",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 6,
@@ -45,7 +45,7 @@
     "Label": "启用",
     "Value": "true",
     "DictSort": 1,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 7,
@@ -53,7 +53,7 @@
     "Label": "禁用",
     "Value": "false",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 8,
@@ -61,7 +61,7 @@
     "Label": "激活",
     "Value": "true",
     "DictSort": 1,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 9,
@@ -69,8 +69,8 @@
     "Label": "启用",
     "Value": "true",
     "DictSort": 1,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -80,7 +80,7 @@
     "Label": "禁用",
     "Value": "false",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 11,
@@ -88,8 +88,8 @@
     "Label": "启用",
     "Value": "true",
     "DictSort": 1,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -99,7 +99,7 @@
     "Label": "禁用",
     "Value": "false",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 13,
@@ -107,8 +107,8 @@
     "Label": "cron",
     "Value": "1",
     "DictSort": 1,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -118,7 +118,7 @@
     "Label": "simple",
     "Value": "0",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 15,
@@ -126,8 +126,8 @@
     "Label": "ID隔离",
     "Value": "1",
     "DictSort": 1,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -137,7 +137,7 @@
     "Label": "库隔离",
     "Value": "2",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 17,
@@ -145,8 +145,8 @@
     "Label": "MySql",
     "Value": "0",
     "DictSort": 1,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -156,7 +156,7 @@
     "Label": "SqlServer",
     "Value": "1",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 19,
@@ -164,8 +164,8 @@
     "Label": "Sqlite",
     "Value": "2",
     "DictSort": 3,
-    "CreateBy": "admin",
-    "UpdateBy": "",
+    "CreateId": 1,
+    "UpdateId": null,
     "UpdateTime": null,
     "IsDeleted": false
   },
@@ -175,7 +175,7 @@
     "Label": "Oracle",
     "Value": "3",
     "DictSort": 4,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 21,
@@ -183,7 +183,7 @@
     "Label": "全部",
     "Value": "1",
     "DictSort": 1,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 22,
@@ -191,7 +191,7 @@
     "Label": "本人",
     "Value": "2",
     "DictSort": 2,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 23,
@@ -199,7 +199,7 @@
     "Label": "本部门",
     "Value": "3",
     "DictSort": 3,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 24,
@@ -207,7 +207,7 @@
     "Label": "本部门及以下",
     "Value": "4",
     "DictSort": 4,
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 25,
@@ -215,6 +215,6 @@
     "Label": "自定义",
     "Value": "5",
     "DictSort": 5,
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

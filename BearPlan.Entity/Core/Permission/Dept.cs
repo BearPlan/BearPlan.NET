@@ -8,7 +8,7 @@ namespace BearPlan.Entity.Core.Permission
     /// <summary>
     /// 部门
     /// </summary>
-    [SugarTable("sys_dept")]
+    [SugarTable("sys_dept", IsDisabledDelete = true)]
     public class Dept : BaseEntity<long>
     {
         /// <summary>

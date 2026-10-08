@@ -144,7 +144,7 @@ public class AuditLogFilter : IAsyncActionFilter
         var operateLog = new AuditLog
         {
             Id = IdHelper.NextId(),
-            CreateBy = App.GetService<IHttpUser>().Account,
+            CreateId = App.GetService<IHttpUser>().Id,
             CreateTime = DateTime.Now,
             Area = area.IsNullOrEmpty() ? "" : App.L.R(area),
             Controller = controller,
@@ -163,16 +163,7 @@ public class AuditLogFilter : IAsyncActionFilter
         };
 
 
-        var reqUrl = httpContext.Request.Path.Value?.ToLower();
-        if (reqUrl is "/auth/login")
-        {
-            var (_, value) = arguments.SingleOrDefault(k => k.Key == "username");
-            if (!value.IsNullOrEmpty())
-            {
-                operateLog.CreateBy = value.ToString();
-            }
-        }
-
+        // 登录接口尚未认证、无法取得用户 ID，CreateId 保持为空
         return operateLog;
     }
 

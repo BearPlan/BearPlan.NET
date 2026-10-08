@@ -8,7 +8,7 @@
     "TenantType": 2,
     "DbType": 2,
     "ConnectionString": "admin_tenant_1001.db",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 2,
@@ -19,6 +19,6 @@
     "TenantType": 2,
     "DbType": 2,
     "ConnectionString": "admin_tenant_1002.db",
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

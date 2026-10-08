@@ -10,7 +10,7 @@ namespace BearPlan.Entity.Log;
 /// </summary>
 [LogDataBase]
 [SplitTable(SplitType.Month)]
-[SugarTable($@"{"log_quartz_net"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true)]
+[SugarTable($@"{"log_quartz_net"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true, IsDisabledDelete = true)]
 public class QuartzNetLog : BaseEntity<long>
 {
     /// <summary>

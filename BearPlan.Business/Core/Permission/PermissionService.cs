@@ -34,7 +34,7 @@ public class PermissionService : BaseServices<Role>, IPermissionService
             .GroupBy((ur, rm, m) => m.Permission)
             .Where((ur, rm, m) => ur.UserId == userId && m.MenuType != MenuTypeEnum.Directory && m.Permission != null)
             .OrderBy((ur, rm, m) => m.Permission)
-            .ClearFilter<ICreateByEntity>()
+            .ClearFilter<ICreateIdEntity>()
             .Select((ur, rm, m) => m.Permission).ToListAsync();
         authCodeList = authCodeList.Where(x => !x.IsNullOrEmpty()).ToList();
         return authCodeList;
@@ -54,7 +54,7 @@ public class PermissionService : BaseServices<Role>, IPermissionService
             .GroupBy((ur, ra, a) => new { a.Url, a.Method })
             .Where(ur => ur.UserId == userId)
             .OrderBy((ur, ra, a) => a.Url)
-            .ClearFilter<ICreateByEntity>()
+            .ClearFilter<ICreateIdEntity>()
             .Select((ur, ra, a) => new UrlAccessControlVo
             {
                 Url = a.Url,

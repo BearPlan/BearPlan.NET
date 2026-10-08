@@ -10,7 +10,7 @@ namespace BearPlan.Entity.Test
     /// 多库隔离取消继承ITenantEntity，增加[MultiDbTenant]
     /// </summary>
     //[MultiDbTenant]
-    [SugarTable("test_order")]
+    [SugarTable("test_order", IsDisabledDelete = true)]
     public class TestOrder : BaseEntity<long>, ITenantEntity
     {
         /// <summary>

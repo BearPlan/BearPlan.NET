@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.Message.Email
     /// <summary>
     /// 邮件账户
     /// </summary>
-    [SugarTable("email_account")]
+    [SugarTable("email_account", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_Email", nameof(Email), OrderByType.Asc, true)]
     public class EmailAccount : BaseEntity<long>
     {

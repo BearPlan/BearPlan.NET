@@ -12,7 +12,7 @@
     "Avatar": "/uploads/file/avatar/20231010143458_1711631391147429888.png",
     "PasswordResetTime": null,
     "Sex": 1,
-    "CreateBy": "admin",
+    "CreateId": 1,
     "TenantId": 0
   },
   {
@@ -28,7 +28,7 @@
     "Avatar": "/uploads/file/avatar/20231010143458_1711631391147429888.png",
     "PasswordResetTime": null,
     "Sex": 1,
-    "CreateBy": "admin",
+    "CreateId": 1,
     "TenantId": 1001
   }
 ]

@@ -6,7 +6,7 @@
     "Description": "内置管理员",
     "DataScopeType": 1,
     "AuthCode": "admin",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
 
   {
@@ -16,7 +16,7 @@
     "Description": "普通用户",
     "DataScopeType": 1,
     "AuthCode": "user",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 3,
@@ -25,6 +25,6 @@
     "Description": "游客",
     "DataScopeType": 1,
     "AuthCode": "guest",
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

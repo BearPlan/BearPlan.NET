@@ -9,7 +9,7 @@ namespace BearPlan.Entity.Core.Permission;
 /// <summary>
 /// 系统菜单
 /// </summary>
-[SugarTable("sys_menu")]
+[SugarTable("sys_menu", IsDisabledDelete = true)]
 public class Menu : BaseEntity<long>
 {  /// <summary>
    /// 权限标识符

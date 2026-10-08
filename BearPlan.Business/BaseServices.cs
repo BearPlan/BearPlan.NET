@@ -224,15 +224,15 @@ public class BaseServices<TEntity> : IBaseServices<TEntity> where TEntity : clas
     /// <param name="selectExpression">查询表达式</param>
     /// <param name="orderExpression">排序表达式</param>
     /// <param name="orderByType">排序方式</param>
-    /// <param name="isClearCreateByFilter">清除创建人过滤器</param>
+    /// <param name="isClearCreateIdFilter">清除创建人标识过滤器</param>
     /// <param name="lockString">锁</param>
     /// <param name="cacheDurationInSeconds">缓存时间(秒)</param>
     /// <param name="isSplitTable">是否分表</param>
-    /// 
+    ///
     public ISugarQueryable<TEntity> GetIQueryable(Expression<Func<TEntity, bool>> whereExpression = null,
        Expression<Func<TEntity, TEntity>> selectExpression = null,
        Expression<Func<TEntity, object>> orderExpression = null, OrderByType? orderByType = null,
-       bool isClearCreateByFilter = false, string lockString = "", int cacheDurationInSeconds = 0,
+       bool isClearCreateIdFilter = false, string lockString = "", int cacheDurationInSeconds = 0,
        bool isSplitTable = false)
     {
         var table = SugarClient.Queryable<TEntity>().WhereIF(whereExpression != null, whereExpression).WithCacheIF(cacheDurationInSeconds > 0, cacheDurationInSeconds);
@@ -242,9 +242,9 @@ public class BaseServices<TEntity> : IBaseServices<TEntity> where TEntity : clas
             table = table.With(lockString);
         }
 
-        if (isClearCreateByFilter)
+        if (isClearCreateIdFilter)
         {
-            table = table.ClearFilter<ICreateByEntity>();
+            table = table.ClearFilter<ICreateIdEntity>();
         }
 
         if (selectExpression != null)

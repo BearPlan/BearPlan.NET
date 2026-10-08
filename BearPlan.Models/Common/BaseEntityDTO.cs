@@ -13,9 +13,9 @@ namespace BearPlan.Models.Common
         public T Id { get; set; }
 
         /// <summary>
-        /// 创建者名称
+        /// 创建者ID
         /// </summary>
-        public string CreateBy { get; set; } = string.Empty;
+        public long? CreateId { get; set; }
 
         /// <summary>
         /// 创建时间
@@ -23,9 +23,9 @@ namespace BearPlan.Models.Common
         public DateTime CreateTime { get; set; }
 
         /// <summary>
-        /// 更新者名称
+        /// 更新者ID
         /// </summary>
-        public string UpdateBy { get; set; } = string.Empty;
+        public long? UpdateId { get; set; }
 
 
         /// <summary>

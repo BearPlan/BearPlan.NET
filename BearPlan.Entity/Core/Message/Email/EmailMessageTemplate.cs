@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.Message.Email
     /// <summary>
     /// 邮件模板
     /// </summary>
-    [SugarTable("email_message_template")]
+    [SugarTable("email_message_template", IsDisabledDelete = true)]
     public class EmailMessageTemplate : BaseEntity<long>
     {
         /// <summary>

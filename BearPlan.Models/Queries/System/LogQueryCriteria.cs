@@ -22,8 +22,8 @@ public class LogQueryCriteria : DateRange, IConditionalModel
     public string Method { get; set; } = string.Empty;
 
     /// <summary>
-    /// 描述
+    /// 创建者ID
     /// </summary>
-    [QueryCondition(ConditionType = ConditionalType.Like)]
-    public string CreateBy { get; set; } = string.Empty;
+    [QueryCondition(ConditionType = ConditionalType.Equal)]
+    public long? CreateId { get; set; }
 }

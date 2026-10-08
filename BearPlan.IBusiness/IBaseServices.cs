@@ -101,7 +101,7 @@ public interface IBaseServices<TEntity> where TEntity : class
     /// <param name="selectExpression">查询表达式</param>
     /// <param name="orderExpression">排序表达式</param>
     /// <param name="orderByType">排序方式</param>
-    /// <param name="isClearCreateByFilter">清除创建人过滤器</param>
+    /// <param name="isClearCreateIdFilter">清除创建人标识过滤器</param>
     /// <param name="lockString">锁</param>
     /// <param name="cacheDurationInSeconds">缓存时间(秒)</param>
     /// <param name="isSplitTable">是否分表</param>
@@ -109,7 +109,7 @@ public interface IBaseServices<TEntity> where TEntity : class
     ISugarQueryable<TEntity> GetIQueryable(Expression<Func<TEntity, bool>> whereExpression = null,
         Expression<Func<TEntity, TEntity>> selectExpression = null,
         Expression<Func<TEntity, object>> orderExpression = null, OrderByType? orderByType = null,
-        bool isClearCreateByFilter = false, string lockString = "", int cacheDurationInSeconds = 0,
+        bool isClearCreateIdFilter = false, string lockString = "", int cacheDurationInSeconds = 0,
         bool isSplitTable = false);
    
     #endregion

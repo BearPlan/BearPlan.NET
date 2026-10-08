@@ -8,7 +8,7 @@ namespace BearPlan.Entity.Core.Permission
     /// <summary>
     /// 岗位
     /// </summary>
-    [SugarTable("sys_job")]
+    [SugarTable("sys_job", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_Name", nameof(Name), OrderByType.Asc, true)]
     public class Job : BaseEntity<long>
     {

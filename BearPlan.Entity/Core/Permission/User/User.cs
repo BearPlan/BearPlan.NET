@@ -11,7 +11,7 @@ namespace BearPlan.Entity.Core.Permission.User
     /// <summary>
     /// 系统用户
     /// </summary>
-    [SugarTable("sys_user")]
+    [SugarTable("sys_user", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_UserName", nameof(UserName), OrderByType.Asc, true)]
     public class User : BaseEntity<long>
     {

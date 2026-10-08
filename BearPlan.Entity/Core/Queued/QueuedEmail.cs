@@ -9,7 +9,7 @@ namespace BearPlan.Entity.Core.Queued
     /// <summary>
     /// 邮件队列
     /// </summary>
-    [SugarTable("queued_email")]
+    [SugarTable("queued_email", IsDisabledDelete = true)]
     public class QueuedEmail : BaseEntity<long>
     {
         /// <summary>

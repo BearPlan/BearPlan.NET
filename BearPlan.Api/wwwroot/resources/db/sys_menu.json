@@ -23,8 +23,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -51,8 +51,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -79,8 +79,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -107,8 +107,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -135,8 +135,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -163,8 +163,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -191,8 +191,8 @@
     "ActiveMenu": null,
     "MultiTab": 1,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -219,8 +219,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -247,8 +247,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -275,8 +275,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -303,8 +303,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -331,8 +331,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -359,8 +359,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -387,8 +387,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -415,8 +415,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -443,8 +443,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -471,8 +471,8 @@
     "ActiveMenu": "",
     "MultiTab": 1,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -499,8 +499,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -527,8 +527,8 @@
     "ActiveMenu": "",
     "MultiTab": 1,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -555,8 +555,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -583,8 +583,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -611,8 +611,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -639,8 +639,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -667,8 +667,8 @@
     "ActiveMenu": "",
     "MultiTab": 1,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -695,8 +695,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -723,8 +723,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -751,8 +751,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -779,8 +779,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -807,8 +807,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -835,8 +835,8 @@
     "ActiveMenu": "",
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": "admin",
+    "CreateId": null,
+    "UpdateId": 1,
     "IsDeleted": 0
   },
   {
@@ -863,8 +863,8 @@
     "ActiveMenu": "",
     "MultiTab": 1,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   },
   {
@@ -891,8 +891,8 @@
     "ActiveMenu": null,
     "MultiTab": 0,
     "FixedIndexInTab": null,
-    "CreateBy": null,
-    "UpdateBy": null,
+    "CreateId": null,
+    "UpdateId": null,
     "IsDeleted": 0
   }
 ]

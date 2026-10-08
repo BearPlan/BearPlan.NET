@@ -7,8 +7,8 @@ using BearPlan.Core;
 using BearPlan.Entity.Log;
 using BearPlan.IBusiness;
 using BearPlan.Models;
-using SqlSugar;
 using BearPlan.Common.WebApp;
+using SqlSugar;
 
 namespace BearPlan.Business.Log;
 
@@ -52,7 +52,7 @@ public class AuditLogService : BaseServices<AuditLog>, IAuditLogService
     /// </summary>
     public async Task<PagedResults<AuditLogDTO>> QueryByCurrentAsync(AuditLogParam param)
     {
-        var page = await GetIQueryable(x => x.CreateBy == App.GetService<IHttpUser>().Account, isSplitTable: true)
+        var page = await GetIQueryable(x => x.CreateId == App.GetService<IHttpUser>().Id, isSplitTable: true)
             .Select(x => new AuditLogDTO
             {
                 Id = x.Id,

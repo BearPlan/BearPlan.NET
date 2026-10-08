@@ -199,6 +199,20 @@ public static class SqlSugarExtensions
             rootEntity.Id = IdHelper.NextId();
         }
 
+        // 审计人ID对所有实现审计接口的实体统一填充（含 Guid 主键等非 long 主键实体）
+        if (httpUser.IsNotNull() && httpUser.Id > 0)
+        {
+            if (entityInfo.EntityValue is ICreateIdEntity createEntity && entityInfo.OperationType == DataFilterType.InsertByObject && createEntity.CreateId == null)
+            {
+                createEntity.CreateId = httpUser.Id;
+            }
+
+            if (entityInfo.EntityValue is IUpdateIdEntity updateEntity && entityInfo.OperationType == DataFilterType.UpdateByObject)
+            {
+                updateEntity.UpdateId = httpUser.Id;
+            }
+        }
+
         #region BaseEntity
 
         if (entityInfo.EntityValue is BaseEntity<long> baseEntity)
@@ -219,32 +233,10 @@ public static class SqlSugarExtensions
                     break;
             }
 
-            if (httpUser.IsNotNull() && !httpUser.Account.IsNullOrEmpty())
+            var tenant = baseEntity as ITenantEntity;
+            if (tenant != null && httpUser.IsNotNull() && httpUser.TenantId > 0 && entityInfo.OperationType == DataFilterType.InsertByObject && tenant.TenantId == 0)
             {
-                switch (entityInfo.OperationType)
-                {
-                    case DataFilterType.InsertByObject:
-                        {
-                            if (baseEntity.CreateBy.IsNullOrEmpty())
-                            {
-                                baseEntity.CreateBy = httpUser.Account;
-                            }
-
-                            var tenant = baseEntity as ITenantEntity;
-                            if (tenant != null && httpUser.TenantId > 0)
-                            {
-                                if (tenant.TenantId == 0)
-                                {
-                                    tenant.TenantId = httpUser.TenantId;
-                                }
-                            }
-
-                            break;
-                        }
-                    case DataFilterType.UpdateByObject:
-                        baseEntity.UpdateBy = httpUser.Account;
-                        break;
-                }
+                tenant.TenantId = httpUser.TenantId;
             }
         }
 
@@ -270,32 +262,30 @@ public static class SqlSugarExtensions
                     break;
             }
 
-            if (httpUser.IsNotNull() && !httpUser.Account.IsNullOrEmpty())
+            // 不实现 ICreateIdEntity 以豁免数据权限过滤，审计人在此按封闭类型填充
+            if (httpUser.IsNotNull() && httpUser.Id > 0)
             {
                 switch (entityInfo.OperationType)
                 {
                     case DataFilterType.InsertByObject:
                         {
-                            if (baseEntityNoDataScope.CreateBy.IsNullOrEmpty())
+                            if (baseEntityNoDataScope.CreateId == null)
                             {
-                                baseEntityNoDataScope.CreateBy = httpUser.Account;
-                            }
-
-                            var tenant = baseEntityNoDataScope as ITenantEntity;
-                            if (tenant != null && httpUser.TenantId > 0)
-                            {
-                                if (tenant.TenantId == 0)
-                                {
-                                    tenant.TenantId = httpUser.TenantId;
-                                }
+                                baseEntityNoDataScope.CreateId = httpUser.Id;
                             }
 
                             break;
                         }
                     case DataFilterType.UpdateByObject:
-                        baseEntityNoDataScope.UpdateBy = httpUser.Account;
+                        baseEntityNoDataScope.UpdateId = httpUser.Id;
                         break;
                 }
+            }
+
+            var tenantNoScope = baseEntityNoDataScope as ITenantEntity;
+            if (tenantNoScope != null && httpUser.IsNotNull() && httpUser.TenantId > 0 && entityInfo.OperationType == DataFilterType.InsertByObject && tenantNoScope.TenantId == 0)
+            {
+                tenantNoScope.TenantId = httpUser.TenantId;
             }
         }
 
@@ -433,37 +423,37 @@ public static class SqlSugarExtensions
     private static void ConfiguringUserDataScopeFilter(this SqlSugarScopeProvider db)
     {
         var httpUser = App.GetService<IHttpUser>();
-        if (httpUser.IsNull() || httpUser.Account.IsNullOrEmpty()) return;
+        if (httpUser.IsNull() || httpUser.Id <= 0) return;
         var dataScopeService = App.GetService<IDataScopeService>();
         if (dataScopeService == null) return;
 
         try
         {
-            var accounts = AsyncHelper.RunSync(() =>
-                dataScopeService.GetDataScopeAccountsAsync(httpUser.Id));
-            if (accounts.Count > 0)
+            var userIds = AsyncHelper.RunSync(() =>
+                dataScopeService.GetDataScopeUserIdsAsync(httpUser.Id));
+            if (userIds.Count == 1 && userIds[0] == IDataScopeService.AllScopeId)
             {
-                if (accounts.Count == 1)
-                {
-                    if (!accounts[0].Equals("All"))
-                    {
-                        db.QueryFilter.AddTableFilter<ICreateByEntity>(it => it.CreateBy == accounts[0]);
-                    }
-                }
-                else
-                {
-                    db.QueryFilter.AddTableFilter<ICreateByEntity>(it => accounts.Contains(it.CreateBy));
-                }
+                // 全部数据权限，不追加创建人过滤
+            }
+            else if (userIds.Count == 1)
+            {
+                db.QueryFilter.AddTableFilter<ICreateIdEntity>(it => it.CreateId == userIds[0]);
+            }
+            else if (userIds.Count > 1)
+            {
+                // 实体 CreateId 为可空类型，集合统一升为 long? 以便 SqlSugar 翻译 IN 查询
+                var scopeIds = userIds.Cast<long?>().ToList();
+                db.QueryFilter.AddTableFilter<ICreateIdEntity>(it => scopeIds.Contains(it.CreateId));
             }
             else
             {
-                db.QueryFilter.AddTableFilter<ICreateByEntity>(it => it.CreateBy == httpUser.Account);
+                db.QueryFilter.AddTableFilter<ICreateIdEntity>(it => it.CreateId == httpUser.Id);
             }
         }
         catch (Exception e)
         {
             Logger.Fatal("Error in configuring user data permissions：\r\n" + ExceptionHelper.GetExceptionAllMsg(e));
-            db.QueryFilter.AddTableFilter<ICreateByEntity>(it => it.CreateBy == httpUser.Account);
+            db.QueryFilter.AddTableFilter<ICreateIdEntity>(it => it.CreateId == httpUser.Id);
         }
     }
 

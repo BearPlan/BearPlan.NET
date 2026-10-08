@@ -9,7 +9,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 租户
     /// </summary>
-    [SugarTable("sys_tenant")]
+    [SugarTable("sys_tenant", IsDisabledDelete = true)]
     public class Tenant : BaseEntity<long>
     {
         /// <summary>

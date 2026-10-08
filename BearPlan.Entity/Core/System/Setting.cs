@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 参数配置
     /// </summary>
-    [SugarTable("sys_setting")]
+    [SugarTable("sys_setting", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_Name", nameof(Name), OrderByType.Asc, true)]
     public class Setting : BaseEntity<long>
     {

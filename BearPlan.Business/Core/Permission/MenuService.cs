@@ -290,7 +290,7 @@ public class MenuService : BaseServices<Menu>, IMenuService
             .Queryable<UserRole, RoleMenu, Menu>((ur, rm, m) => ur.RoleId == rm.RoleId && rm.MenuId == m.Id)
             .Where((ur, rm, m) => ur.UserId == userId && m.MenuType != MenuTypeEnum.Query)
             .OrderBy((ur, rm, m) => m.Order)
-            .ClearFilter<ICreateByEntity>()
+            .ClearFilter<ICreateIdEntity>()
             .Select((ur, rm, m) => m).Distinct().ToListAsync();
         //var menuListChild = TreeHelper<Menu>.ListToTrees(menuList, "Id", "ParentId", 0);
         return await BuildAsync(menuList);

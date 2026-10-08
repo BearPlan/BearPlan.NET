@@ -8,7 +8,7 @@ namespace BearPlan.Entity.ConfigProvider
     /// <summary>
     /// 国际化
     /// </summary>
-    [SugarTable("i18n")]
+    [SugarTable("i18n", IsDisabledDelete = true)]
     [ConfigProviderDataBase]
     //[Tenant(AppConfig.TenantTable)]
     public class I18n : BaseEntity<long>

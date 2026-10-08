@@ -5,7 +5,7 @@ namespace BearPlan.Entity.Core.Permission.User
     /// <summary>
     /// 用户岗位关联
     /// </summary>
-    [SugarTable("sys_user_job")]
+    [SugarTable("sys_user_job", IsDisabledDelete = true)]
     public class UserJob
     {
         /// <summary>

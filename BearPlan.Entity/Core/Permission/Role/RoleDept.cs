@@ -5,7 +5,7 @@ namespace BearPlan.Entity.Core.Permission.Role
     /// <summary>
     /// 角色部门关联
     /// </summary>
-    [SugarTable("sys_role_dept")]
+    [SugarTable("sys_role_dept", IsDisabledDelete = true)]
     public class RoleDept
     {
         /// <summary>

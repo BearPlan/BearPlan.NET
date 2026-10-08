@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.Permission.Role
     /// <summary>
     /// 角色Apis关联
     /// </summary>
-    [SugarTable("sys_role_apis")]
+    [SugarTable("sys_role_apis", IsDisabledDelete = true)]
     public class RoleApis
     {
         /// <summary>

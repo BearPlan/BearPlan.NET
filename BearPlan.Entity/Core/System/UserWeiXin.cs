@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 用户微信账号
     /// </summary>
-    [SugarTable("sys_user_weixin")]
+    [SugarTable("sys_user_weixin", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_OpenId", nameof(OpenId), OrderByType.Asc, true)]
     public class UserWeiXin : BaseEntity<long>
     {

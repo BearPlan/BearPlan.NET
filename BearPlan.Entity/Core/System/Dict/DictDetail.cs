@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System.Dict
     /// <summary>
     /// 字典详情
     /// </summary>
-    [SugarTable("sys_dict_detail")]
+    [SugarTable("sys_dict_detail", IsDisabledDelete = true)]
     public class DictDetail : BaseEntityNoDataScope<long>
     {
         /// <summary>

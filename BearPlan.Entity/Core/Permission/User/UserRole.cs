@@ -5,7 +5,7 @@ namespace BearPlan.Entity.Core.Permission.User
     /// <summary>
     /// 用户角色关联
     /// </summary>
-    [SugarTable("sys_user_role")]
+    [SugarTable("sys_user_role", IsDisabledDelete = true)]
     public class UserRole
     {
         /// <summary>

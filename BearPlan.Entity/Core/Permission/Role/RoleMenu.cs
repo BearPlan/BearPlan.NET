@@ -5,7 +5,7 @@ namespace BearPlan.Entity.Core.Permission.Role
     /// <summary>
     /// 角色菜单关联
     /// </summary>
-    [SugarTable("sys_role_menu")]
+    [SugarTable("sys_role_menu", IsDisabledDelete = true)]
     public class RoleMenu
     {
         /// <summary>

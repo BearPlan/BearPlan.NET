@@ -95,7 +95,6 @@ public class JobBase<T>
             {
                 quartzNet.RunTimes += 1;
                 quartzNet.UpdateTime = DateTime.Now;
-                quartzNet.UpdateBy = "QuartzNet Task";
 
                 //记录任务日志
                 var quartzNetLog = new QuartzNetLog
@@ -111,7 +110,6 @@ public class JobBase<T>
                     ExecutionDuration = stopwatch.ElapsedMilliseconds,
                     RunParams = quartzNet.RunParams,
                     IsSuccess = isSuccess,
-                    CreateBy = "QuartzNet",
                     CreateTime = quartzNet.UpdateTime ?? DateTime.MinValue
                 };
                 await QuartzNetService.UpdateJobInfoAsync(quartzNet);

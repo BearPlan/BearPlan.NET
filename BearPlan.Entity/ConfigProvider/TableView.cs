@@ -12,7 +12,7 @@ namespace BearPlan.Entity.ConfigProvider
     /// <summary>
     /// 表格重写
     /// </summary>
-    [SugarTable("table_view")]
+    [SugarTable("table_view", IsDisabledDelete = true)]
     [ConfigProviderDataBase]
     //[Tenant(AppConfig.TenantTable)]
     public class TableView : BaseEntity<long>

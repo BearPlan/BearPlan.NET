@@ -5,7 +5,7 @@
     "Value": "1",
     "Enabled": true,
     "Description": "默认系统邮件发送账户",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 2,
@@ -13,7 +13,7 @@
     "Value": "false",
     "Enabled": true,
     "Description": "系统管理免接口鉴权",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 3,
@@ -21,7 +21,7 @@
     "Value": "true",
     "Enabled": true,
     "Description": "异常日志是否保存到数据库",
-    "CreateBy": "admin"
+    "CreateId": 1
   },
   {
     "Id": 4,
@@ -29,6 +29,6 @@
     "Value": "true",
     "Enabled": true,
     "Description": "审计日志是否保存到数据库",
-    "CreateBy": "admin"
+    "CreateId": 1
   }
 ]

@@ -10,9 +10,9 @@ namespace BearPlan.Entity.Log
     /// </summary>
     [LogDataBase]
     [SplitTable(SplitType.Month)]
-    [SugarTable($@"{"log_operate"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true)]
+    [SugarTable($@"{"log_operate"}_{{year}}{{month}}{{day}}", IsDisabledUpdateAll = true, IsDisabledDelete = true)]
     // 添加复合索引：按创建人 + 创建时间范围查询
-    // [SugarIndex("index_{split_table}_CreateBy_CreateTime", nameof(CreateBy), OrderByType.Asc, nameof(CreateTime),
+    // [SugarIndex("index_{split_table}_CreateId_CreateTime", nameof(CreateId), OrderByType.Asc, nameof(CreateTime),
     //     OrderByType.Desc)]
     // 添加单字段索引：按操作类型（Controller + Action）查询
     [SugarIndex("index_{split_table}_Controller", nameof(Controller), OrderByType.Asc)]

@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 三方应用密钥
     /// </summary>
-    [SugarTable("sys_app_secret")]
+    [SugarTable("sys_app_secret", IsDisabledDelete = true)]
     public class AppSecret : BaseEntity<long>
     {
         /// <summary>

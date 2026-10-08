@@ -10,7 +10,7 @@ namespace BearPlan.Entity.Core.Permission
     /// <summary>
     /// Api路由
     /// </summary>
-    [SugarTable("sys_apis")]
+    [SugarTable("sys_apis", IsDisabledDelete = true)]
     public class Apis : BaseEntity<Guid>
     {
         /// <summary>

@@ -10,7 +10,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// 系统作业调度
     /// </summary>
-    [SugarTable("sys_quartz_job")]
+    [SugarTable("sys_quartz_job", IsDisabledDelete = true)]
     public class QuartzNet : BaseEntity<long>
     {
         /// <summary>

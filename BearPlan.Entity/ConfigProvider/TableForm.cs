@@ -12,7 +12,7 @@ namespace BearPlan.Entity.ConfigProvider
     /// <summary>
     /// 表格重写
     /// </summary>
-    [SugarTable("table_form")]
+    [SugarTable("table_form", IsDisabledDelete = true)]
     [ConfigProviderDataBase]
     //[Tenant(AppConfig.TenantTable)]
 

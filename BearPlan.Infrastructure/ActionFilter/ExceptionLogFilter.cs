@@ -126,7 +126,7 @@ public class ExceptionLogFilter : IAsyncExceptionFilter
             log = new ExceptionLog
             {
                 Id = IdHelper.NextId(),
-                CreateBy = App.GetService<IHttpUser>().Account,
+                CreateId = App.GetService<IHttpUser>().Id,
                 CreateTime = DateTime.Now,
                 Area = routeValues["area"].IsNullOrEmpty() ? "" : App.L.R(routeValues["area"]),
                 Controller = routeValues["controller"],

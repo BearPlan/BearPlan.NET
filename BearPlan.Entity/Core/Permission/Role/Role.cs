@@ -11,7 +11,7 @@ namespace BearPlan.Entity.Core.Permission.Role
     /// <summary>
     /// 角色
     /// </summary>
-    [SugarTable("sys_role")]
+    [SugarTable("sys_role", IsDisabledDelete = true)]
     [SugarIndex("unique_{table}_Name", nameof(Name), OrderByType.Asc, true)]
     [SugarIndex("unique_{table}_AuthCode", nameof(AuthCode), OrderByType.Asc, true)]
     public class Role : BaseEntity<long>

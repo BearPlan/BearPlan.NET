@@ -76,22 +76,17 @@ namespace BearPlan.Infrastructure.SeedData
                                     x.GetInterfaces().Contains(typeof(ITenantEntity))));
                 }
 
-                var masterTables = dataContext.Db.DbMaintenance.GetTableInfoList();
+                // 无条件执行 CodeFirst 同步：表不存在则建表，已存在则同步结构（补缺失列/索引）；
+                // 全部实体已声明 SugarTable.IsDisabledDelete = true，禁止删除实体中不存在的列
                 entityList.ForEach(entity =>
                 {
-                    var entityInfo = dataContext.Db.EntityMaintenance.GetEntityInfo(entity);
-
-                    if (!masterTables.Any(x =>
-                            x.Name.Equals(entityInfo.DbTableName, StringComparison.OrdinalIgnoreCase)))
+                    if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
                     {
-                        if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
-                        {
-                            dataContext.Db.CodeFirst.SplitTables().InitTables(entity);
-                        }
-                        else
-                        {
-                            dataContext.Db.CodeFirst.InitTables(entity);
-                        }
+                        dataContext.Db.CodeFirst.SplitTables().InitTables(entity);
+                    }
+                    else
+                    {
+                        dataContext.Db.CodeFirst.InitTables(entity);
                     }
                 });
 
@@ -424,27 +419,16 @@ namespace BearPlan.Infrastructure.SeedData
                             x.GetCustomAttribute<LogDataBaseAttribute>() != null).ToList();
 
 
-            var logTables = logDb.DbMaintenance.GetTableInfoList();
-
+            // 无条件执行 CodeFirst 同步，分表结构变更（如审计字段 create_id）随启动自动补列
             logEntityList.ForEach(entity =>
             {
-                var entityInfo = dataContext.Db.EntityMaintenance.GetEntityInfo(entity);
-
-                DateTime now = DateTime.Now;
-                var tableName = entityInfo.DbTableName.Replace("{year}", now.Year.ToString())
-                    .Replace("{month}", now.Month.ToString("D2"))
-                    .Replace("{day}", "01");
-
-                if (!logTables.Any(x => x.Name.Equals(tableName, StringComparison.OrdinalIgnoreCase)))
+                if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
                 {
-                    if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
-                    {
-                        logDb.CodeFirst.SplitTables().InitTables(entity);
-                    }
-                    else
-                    {
-                        logDb.CodeFirst.InitTables(entity);
-                    }
+                    logDb.CodeFirst.SplitTables().InitTables(entity);
+                }
+                else
+                {
+                    logDb.CodeFirst.InitTables(entity);
                 }
             });
             LogDbReady = true;
@@ -482,22 +466,16 @@ namespace BearPlan.Infrastructure.SeedData
                             x.GetCustomAttribute<ConfigProviderDataBaseAttribute>() != null).ToList();
 
 
-            var configProviderTables = configProviderDb.DbMaintenance.GetTableInfoList();
-
+            // 无条件执行 CodeFirst 同步：已存在的表同步结构（实体已声明 IsDisabledDelete 禁止删列）
             configProviderEntityList.ForEach(entity =>
             {
-                var entityInfo = dataContext.Db.EntityMaintenance.GetEntityInfo(entity);
-
-                if (!configProviderTables.Any(x => x.Name.Equals(entityInfo.DbTableName, StringComparison.OrdinalIgnoreCase)))
+                if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
                 {
-                    if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
-                    {
-                        configProviderDb.CodeFirst.SplitTables().InitTables(entity);
-                    }
-                    else
-                    {
-                        configProviderDb.CodeFirst.InitTables(entity);
-                    }
+                    configProviderDb.CodeFirst.SplitTables().InitTables(entity);
+                }
+                else
+                {
+                    configProviderDb.CodeFirst.InitTables(entity);
                 }
             });
             ConfigProviderDbReady = true;
@@ -552,22 +530,16 @@ namespace BearPlan.Infrastructure.SeedData
                     continue;
                 }
 
-                var masterTables = db.DbMaintenance.GetTableInfoList();
+                // 无条件执行 CodeFirst 同步：已存在的租户表同步结构（实体已声明 IsDisabledDelete 禁止删列）
                 entityList.ForEach(entity =>
                 {
-                    var entityInfo = db.EntityMaintenance.GetEntityInfo(entity);
-
-                    if (!masterTables.Any(x =>
-                            x.Name.Equals(entityInfo.DbTableName, StringComparison.OrdinalIgnoreCase)))
+                    if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
                     {
-                        if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
-                        {
-                            db.CodeFirst.SplitTables().InitTables(entity);
-                        }
-                        else
-                        {
-                            db.CodeFirst.InitTables(entity);
-                        }
+                        db.CodeFirst.SplitTables().InitTables(entity);
+                    }
+                    else
+                    {
+                        db.CodeFirst.InitTables(entity);
                     }
                 });
             }

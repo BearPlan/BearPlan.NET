@@ -6,7 +6,7 @@ namespace BearPlan.Entity.Core.System
     /// <summary>
     /// Token黑名单
     /// </summary>
-    [SugarTable("sys_token_blacklist")]
+    [SugarTable("sys_token_blacklist", IsDisabledDelete = true)]
     public class TokenBlacklist : BaseEntity<long>
     {
         /// <summary>

@@ -98,7 +98,7 @@ public class EmailScheduleTask : IEmailScheduleTask
         //    finally
         //    {
         //        queuedEmail.SentTries += 1;
-        //        queuedEmail.UpdateBy = "EmailScheduleTask";
+        //        queuedEmail.UpdateId = App.HttpUser.Id;
         //        queuedEmail.UpdateTime = DateTime.Now;
         //        await _queuedEmailService.UpdateTriesAsync(queuedEmail);
         //    }
