@@ -4,3 +4,6 @@
 [submodule "BearPlan.Admin"]
 	path = BearPlan.Admin
 	url = https://gitee.com/BearPlan/BearPlan.Admin.git
+[submodule "BearPlan.UniApp"]
+	path = BearPlan.UniApp
+	url = https://gitee.com/BearPlan/BearPlan.UniApp.git
